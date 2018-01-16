@@ -16,7 +16,7 @@
 
 <body <?php body_class(); ?>>
 
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark static-top bg-dark">
   <div class="container">
 
     <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo('name'); ?></a>
