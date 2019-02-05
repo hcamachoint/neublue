@@ -1,11 +1,9 @@
-	    <footer class="footer">
-	      <div class="container">
-	      	<div class="container" align="center">
-						<?php get_sidebar('footer'); ?>
-						<p>&copy; <?php wp_title('•', true, 'right'); bloginfo('name'); ?> Website</p>
-					</div>
-	      </div>
-	    </footer>
+<footer class="footer">
+	<div class="container">
+		<?php get_sidebar('footer'); ?>
+		<span class="text-muted"><i class="fas fa-sitemap"></i> <?php bloginfo('name'); ?> Website</span>
+	</div>
+</footer>
 		<?php wp_footer(); ?>
 </body>
 </html>

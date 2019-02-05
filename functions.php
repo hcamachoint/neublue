@@ -1,13 +1,7 @@
 <?php
-require_once('wp_bootstrap_navwalker.php');
+require_once('bs4navwalker.php');
 
-function register_my_menus() {
-   register_nav_menus(
-      array(
-         '<strong>primary</strong>'   => __( 'Primary Menu' )
-      )
-   );
-}
+register_nav_menu('top', 'Top menu');
 
 if ( function_exists('register_sidebar') ) //Widget Footer Widgets Center
         register_sidebar(array(
@@ -19,7 +13,7 @@ if ( function_exists('register_sidebar') ) //Widget Footer Widgets Center
         ));
 
 
-add_action( 'init', 'register_my_menus' );	//Registra el menu del navbar (wp_bootstrap_navwalker.php)
+//add_action( 'init', 'register_my_menus' );	//Registra el menu del navbar (wp_bootstrap_navwalker.php)
 add_filter( 'show_admin_bar', '__return_false' ); //Oculta la barra del administrador
 add_theme_support( 'custom-header' );		//Permite editar el header
 remove_filter ('the_content',  'wpautop');	//Remueve el filtro de los <p></p> automaticos
@@ -27,8 +21,8 @@ remove_filter ('comment_text', 'wpautop');	//Remueve el filtro de los <p></p> au
 
 function wpbootstrap_scripts()
 {
-	wp_enqueue_style('bs_css', get_template_directory_uri(). '/css/bootstrap.css');
-  wp_enqueue_style('cs_css', get_template_directory_uri(). '/css/neublue.css');
+	wp_enqueue_style('bs_css', get_template_directory_uri(). '/css/bootstrap.min.css');
+  wp_enqueue_style('sf_css', get_template_directory_uri(). '/css/sticky-footer-navbar.css');
 
 	wp_enqueue_script( 'wpbootstrap-script', get_template_directory_uri() . '/js/jquery.min.js', array(), '1.0.0', true);
 	wp_enqueue_script( 'wpbootstrap-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1.0.0', true);

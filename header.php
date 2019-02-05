@@ -9,29 +9,24 @@
   </head>
   <body <?php body_class(); ?>>
     <header>
-      <nav class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo('name'); ?></a>
-            </div>
-            <?php
-              wp_nav_menu( array(
-                  'menu'              => 'top_menu',
-                  'depth'             => 2,
-                  'container'         => 'div',
-                  'container_class'   => 'collapse navbar-collapse',
-                  'container_id'      => 'bs-example-navbar-collapse-1',
-                  'menu_class'        => 'nav navbar-nav navbar-right',
-                  'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                  'walker'            => new wp_bootstrap_navwalker())
-              );
-            ?>
-        </div>
-      </nav>
+      <nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top">
+         <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo('name'); ?></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <?php
+       wp_nav_menu([
+         'menu'            => 'top',
+         'theme_location'  => 'top',
+         'container'       => 'div',
+         'container_id'    => 'bs4navbar',
+         'container_class' => 'collapse navbar-collapse navbar-right',
+         'menu_id'         => false,
+         'menu_class'      => 'navbar-nav ml-auto', //mr-auto to left
+         'depth'           => 2,
+         'fallback_cb'     => 'bs4navwalker::fallback',
+         'walker'          => new bs4navwalker()
+       ]);
+       ?>
+    </nav>
     </header>
