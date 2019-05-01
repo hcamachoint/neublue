@@ -9,7 +9,7 @@
   </head>
   <body <?php body_class(); ?>>
     <header>
-      <nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top">
+      <nav class="navbar navbar-dark bg-primary navbar-expand-md static-top">
          <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo('name'); ?></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>

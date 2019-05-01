@@ -1,7 +1,8 @@
 <h1>Wordpress theme, simple, blue, parallax</h1>
 
 <h4>Tema de wordpress basado en:</h4>
-<p>Bootstrap 3: https://getbootstrap.com/docs/3.3/</p>
+
+<p>Bootstrap 4: https://getbootstrap.com/docs/</p>
 <p>Font Awesome 5: https://fontawesome.com/icons</p>
 <p>Parallaxjs: http://pixelcog.github.io/parallax.js/</p>
 
