@@ -29,5 +29,60 @@ function wpbootstrap_scripts()
   wp_enqueue_script( 'wpbootstrap-fontawesome', get_template_directory_uri() . '/js/fontawesome-all.js', array(), '1.0.0', true);
 	wp_enqueue_script('wpbootstrap-parallax',  get_template_directory_uri() . '/js/parallax.min.js', array(), '1.0.0', true);
 }
+
 add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts' );
+
+// Customize Appearance Options
+function customizable_colors( $wp_customize ) {
+
+  $wp_customize->add_section('lwp_standard_colors', array(
+		'title' => __('Theme Colors', 'LearningWordPress'),
+		'priority' => 30,
+	));
+
+	$wp_customize->add_setting('bg-nav', array(
+		'default' => '#006ec3',
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_setting('bg-footer', array(
+		'default' => '#d8d8d8',
+		'transport' => 'refresh',
+	));
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'lwp_link_color_control', array(
+		'label' => __('Navbar Color', 'LearningWordPress'),
+		'section' => 'lwp_standard_colors',
+		'settings' => 'bg-nav',
+	) ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'lwp_btn_color_control', array(
+		'label' => __('Footer Color', 'LearningWordPress'),
+		'section' => 'lwp_standard_colors',
+		'settings' => 'bg-footer',
+	) ) );
+
+}
+
+add_action('customize_register', 'customizable_colors');
+
+// Output Customize CSS
+function learningWordPress_customize_css() { ?>
+
+	<style type="text/css">
+
+		.bg-nav {
+			background: <?php echo get_theme_mod('bg-nav'); ?>!important;
+		}
+
+    .bg-footer {
+			background: <?php echo get_theme_mod('bg-footer'); ?>!important;
+		}
+
+	</style>
+
+<?php }
+
+add_action('wp_head', 'learningWordPress_customize_css');
+
 ?>
