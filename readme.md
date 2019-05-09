@@ -2,7 +2,7 @@
 
 <h4>Tema de wordpress basado en:</h4>
 
-<p>Bootstrap 4: https://getbootstrap.com/docs/</p>
+<p>Bootstrap 4.3.1: https://getbootstrap.com/docs/</p>
 <p>Font Awesome 5: https://fontawesome.com/icons</p>
 <p>Parallaxjs: http://pixelcog.github.io/parallax.js/</p>
 

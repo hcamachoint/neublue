@@ -36,7 +36,7 @@ add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts' );
 function customizable_colors( $wp_customize ) {
 
   $wp_customize->add_section('lwp_standard_colors', array(
-		'title' => __('Theme Colors', 'LearningWordPress'),
+		'title' => __('Colores del tema', 'LearningWordPress'),
 		'priority' => 30,
 	));
 
