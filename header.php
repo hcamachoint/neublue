@@ -9,9 +9,13 @@
   </head>
   <body <?php body_class(); ?>>
     <header>
+      <div style="background-color:<?php echo get_theme_mod('bg-subheader'); ?>">
+        <?php echo get_theme_mod('subheader_content'); ?>
+      </div>
+
       <nav class="navbar navbar-dark bg-nav navbar-expand-md static-top">
-        <div class="container-fluid">
-           <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo('name'); ?></a>
+        <div class="container">
+          <h2 style="color:#000"><img src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" height="100px"/></h2>
            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
            </button>
