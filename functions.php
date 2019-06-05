@@ -206,6 +206,7 @@ function learningWordPress_customize_css() { ?>
 
     .bg-footer {
 			background: <?php echo get_theme_mod('bg-footer'); ?>!important;
+      height: auto!important;
 		}
 
     .menu-item a {
@@ -222,12 +223,18 @@ function learningWordPress_customize_css() { ?>
       color: <?php echo get_theme_mod('bg-fa'); ?>!important;
     }
 
-    .navbar
-        {
-          -webkit-box-shadow: 0 8px 6px -6px #999;
-          -moz-box-shadow: 0 8px 6px -6px #999;
-          box-shadow: 0 8px 6px -6px #999;
-        }
+    .navbar{
+      -webkit-box-shadow: 0 8px 6px -6px #999;
+      -moz-box-shadow: 0 8px 6px -6px #999;
+      box-shadow: 0 8px 6px -6px #999;
+    }
+
+    .navbar-toggler{
+        width: 52px;
+        height: 34px;
+        background-color: <?php echo get_theme_mod('bg-nav-ah'); ?>;
+        border:none;
+    }
 
 	</style>
 
